@@ -34,6 +34,22 @@ void main()
     //At the end of the program, it should also display the number of guesses
     //the player needed to guess the value in.     
 
-    cout << "Here is a random number between 1 and 10: " << random(1, 10) << endl;
-    cout << "And here is one between -3 and -5: " << random(-3, -5) << endl;
+   random(1, 100);
+   int User_Gues;
+   bool Gues_Game_Win = false;
+
+    cout << "I have tougth of a random nuber please type in your answer and I will tell you how close you are: " << endl;
+
+
+    cin >> User_Gues;
+
+    for (User_Gues > random || User_Gues < random)
+
+
+    if () 
+    {
+
+
+
+    }
 }
