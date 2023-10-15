@@ -34,22 +34,88 @@ void main()
     //At the end of the program, it should also display the number of guesses
     //the player needed to guess the value in.     
 
-   random(1, 100);
-   int User_Gues;
-   bool Gues_Game_Win = false;
+    int random_Num = random(1, 100);
+    int player_gues{};
+    bool finish_loop = false;
 
-    cout << "I have tougth of a random nuber please type in your answer and I will tell you how close you are: " << endl;
-
-
-    cin >> User_Gues;
-
-    for (User_Gues > random || User_Gues < random)
-
-
-    if () 
+    while (finish_loop != true)
     {
+        cout << random_Num << endl;
+        cout << "Please input a number: ";
+        cin >> player_gues;
 
 
+        if (player_gues == random_Num)
+        {
+
+            cout << "yey good job";
+
+        }
+
+
+        do
+        {
+
+            if (player_gues > random_Num + 50 || player_gues > random_Num - 50)
+            {
+                cout << "freezing\n \n";
+
+            }
+
+            else if (player_gues && random_Num > random_Num + 35 || player_gues && random_Num < random_Num + 35)
+            {
+                cout << "colder\n \n";
+
+
+            }
+
+            else if (player_gues && random_Num > random_Num + 25 || player_gues && random_Num < random_Num + 25)
+            {
+                cout << "cold\n \n";
+
+
+            }
+
+            else if (player_gues && random_Num > random_Num + 15 || player_gues && random_Num < random_Num + 15)
+            {
+                cout << "warm\n \n";
+
+
+            }
+
+            else if (player_gues && random_Num > random_Num + 10 || player_gues && random_Num < random_Num + 10)
+            {
+                cout << "warmer\n \n";
+
+
+            }
+
+            else if (player_gues && random_Num > random_Num + 5 || player_gues && random_Num < random_Num + 5)
+            {
+                cout << "hot\n \n";
+
+
+            }
+
+            else if (player_gues > random_Num + 2 || player_gues > random_Num - 2)
+            {
+                cout << "boiling\n \n";
+
+
+            }
+
+            else
+            {
+                cout << "the number is between 1, 100\n \n";
+            }
+
+
+           
+
+            break;
+
+
+        } while (random_Num != player_gues);
 
     }
 }

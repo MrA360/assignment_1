@@ -1,10 +1,17 @@
 #include <iostream>
 
+using namespace std;
+
 void main()
 {
-    //Add code to prompt a user for a single number, and then show
-    //the square of that number. For example, imagine the session:
 
-    // What number do you want to Square? 5
-    // > 5 squared is 25.
+	float input_number;
+
+	cout << "Please enter the number you want to square: ";
+	cin >> input_number;
+
+	float output_number = input_number * input_number;
+
+	cout << input_number << " Squared is: " << output_number;
+
 }

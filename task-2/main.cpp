@@ -1,20 +1,27 @@
 #include <iostream>
 
+using namespace std;
+
 void main()
 {
-    //Add code to prompt the player for their name, and then
-    //greet them with that name. For example, 
-    //
-    // Please enter your name: ben
-    // Hello ben!
-    //
 
-    //Expand this so the player is asked for their name, clan tag,
-    //age and username. Print out these details like so:
-    //
-    // - Name: <name>
-    // - Username: [<clantag>]<username>
-    // - Age: <age>
-    //
-    
+    string name;
+    string clan_tag;
+    string surname;
+    int age;
+
+    cout << "please enter your name: ";
+    cin >> name;
+    cout << "please enter your clan tag: ";
+    cin >> clan_tag;
+    cout << "please enter your surname: ";
+    cin >> surname;
+    cout << "please enter your age: ";
+    cin >> age;
+
+    cout << "\nPlayer details: ";
+    cout << "\nName: " << name;
+    cout << "\nUsername:" << "[" << clan_tag << "]" << surname;
+    cout << "\nAge: " << age;
+
 }
