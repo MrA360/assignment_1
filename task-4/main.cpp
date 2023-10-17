@@ -9,8 +9,9 @@ int main()
 	string input_MSG;
 	int inputChange = 0;
 
-
+	cout << "please input something here: ";
 	cin >> input_MSG;
+	cout << "\n";
 
 	cout << "****";
 
