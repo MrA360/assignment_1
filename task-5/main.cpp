@@ -2,6 +2,7 @@
 #include <cstring>
 #include <string>
 #include <cctype>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,20 +10,22 @@ int main()
 {
 
 
-    string str;
-
-    cin >> str;
-
-    str[0] = toupper(str[0]);
+  string str;
+  char b;
+  int a = 0;
 
 
-    if ()
-    {
-      
-        cout << "1";
 
+   getline(cin, str);
 
-    }
+   while (str.length() < a)
+   {
+	   if (str == "." + 1)
+	   {
+		   toupper(b);
+	   }
 
-    cout << str;
+   }
+
+   cout << str;
 }
