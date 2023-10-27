@@ -1,31 +1,38 @@
 #include <iostream>
-#include <cstring>
+#include <fstream>
 #include <string>
-#include <cctype>
-#include <algorithm>
+#include <algorithm> 
+#include <cctype>//for toupper
 
 using namespace std;
 
 int main()
 {
 
+        string str;
+        string input;
+        int i = 0;
+        
 
-  string str;
-  char b;
-  int a = 0;
+        cin >> str;
+
+        i = str.find(".");
 
 
+        while (str.length() > i)
+        {
+           i++;
 
-   getline(cin, str);
+           if (ispunct(i) && isspace(i) || ispunct(i))
 
-   while (str.length() < a)
-   {
-	   if (str == "." + 1)
-	   {
-		   toupper(b);
-	   }
+           {
 
-   }
+               transform(str.begin(), str.end(), str.begin(), toupper);
 
-   cout << str;
+           }
+           
+        }
+
+        cout << str;
+
 }

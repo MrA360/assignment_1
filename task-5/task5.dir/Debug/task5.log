@@ -1,3 +1,2 @@
 ﻿  main.cpp
-C:\Users\s013814m\Documents\GitHub\assignment_1\task-5\main.cpp(25): warning C4700: uninitialized local variable 'b' used
   task5.vcxproj -> C:\Users\s013814m\Documents\GitHub\assignment_1\task-5\Debug\task5.exe
