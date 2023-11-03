@@ -9,30 +9,33 @@ using namespace std;
 int main()
 {
 
-        string str;
-        string input;
-        int i = 0;
-        
+        string UserStr;
+        int input_length = UserStr.length();
+        int TextCheck = {};
+        int index = 0;
+        bool UPPER = false;
 
-        cin >> str;
-
-        i = str.find(".");
+        getline(cin, UserStr);
 
 
-        while (str.length() > i)
+        for (int i = 0; i >= input_length; i++)
         {
-           i++;
+            if (UserStr != " " && index == 1)
+            {
 
-           if (ispunct(i) && isspace(i) || ispunct(i))
+                UPPER = true;
 
-           {
+            }
 
-               transform(str.begin(), str.end(), str.begin(), toupper);
+            if (UPPER = true && UserStr == " " && UserStr == ".")
+            {
 
-           }
-           
-        }
+                UserStr[i] = toupper(UserStr[i]);
 
-        cout << str;
+            }
+
+
+
+        } return TextCheck;
 
 }
