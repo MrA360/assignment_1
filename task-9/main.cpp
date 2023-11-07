@@ -1,4 +1,5 @@
 #include <iostream>
+#include "main.h"
 
 using namespace std;
 
@@ -30,15 +31,7 @@ void main()
         cout << std::endl;
     }
 
-    int xdif = (xComponents[0] - xComponents[1]);
-    int ydif = (yComponents[0] - yComponents[1]);
-
-    int xSquare = pow(xdif, 2);
-    int ySquare = pow(ydif, 2);
-
-    int total = xSquare + ySquare;
-
-    float d = sqrt(total);
+    GetDistanceBetweenPoints
 
     cout << d;
 

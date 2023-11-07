@@ -1,11 +1,31 @@
 #pragma once
+#include <iostream>
+
+
 
 struct Vector2
 {
-    float Components[2] = { 0.0f, 0.0f };
+    float x;
+    float y;
 };
 
+float x[2];
+float y[2];
 
+
+void GetDistanceBetweenPoints() 
+{
+    int xdif = (x[0] - x[1]);
+    int ydif = (y[0] - y[1]);
+
+    int xSquare = pow(xdif, 2);
+    int ySquare = pow(ydif, 2);
+
+    int total = xSquare + ySquare;
+
+    float d = sqrt(total);
+   
+}
 
 
 //TODO: Build Vector2 structure
