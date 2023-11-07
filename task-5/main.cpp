@@ -9,33 +9,58 @@ using namespace std;
 int main()
 {
 
+
+    cout << "Please input a sentence i will uppercase it lower case it and sentece case it: ";
+
+
         string UserStr;
-        int input_length = UserStr.length();
-        int TextCheck = {};
-        int index = 0;
-        bool UPPER = false;
+        bool UPPER = true;
 
         getline(cin, UserStr);
+        int input_length = UserStr.length();
+
+        cout << endl;
 
 
-        for (int i = 0; i >= input_length; i++)
+
+        for (size_t i = 0; i < input_length; i++)
         {
-            if (UserStr != " " && index == 1)
-            {
 
-                UPPER = true;
+            UserStr[i] = toupper(UserStr[i]);
 
-            }
+        }
 
-            if (UPPER = true && UserStr == " " && UserStr == ".")
+        cout << UserStr << endl;
+
+        for (size_t i = 0; i < input_length; i++)
+        {
+
+            UserStr[i] = tolower(UserStr[i]);
+
+        }
+
+        cout << UserStr << endl;
+
+
+        for (int i = 0; i <= input_length; i++)
+        {
+
+            if (UPPER == true && UserStr[i] != ' ')
             {
 
                 UserStr[i] = toupper(UserStr[i]);
+                UPPER = false;
 
+            }
+
+            if (ispunct(UserStr[i])) // I found ispunct online and tought its better than writing out all three sentece casses (.?!).
+            {
+                UPPER = true;
             }
 
 
 
-        } return TextCheck;
+        }
+        cout << UserStr << endl;
 
 }

@@ -1,5 +1,11 @@
 #pragma once
 
+struct Vector2
+{
+    float Components[2] = { 0.0f, 0.0f };
+};
+
+
 
 
 //TODO: Build Vector2 structure
