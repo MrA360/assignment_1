@@ -1,7 +1,25 @@
 #include <iostream>
+#include <string>
+
+using namespace std;
+
+
+struct Inventory
+{
+
+
+
+    string Items;
+
+
+
+};
 
 void main()
 {
+
+    
+
     //In this challenge, you should build an inventory system using a dynamically
     //allocated array of structs.
 
@@ -68,4 +86,8 @@ void main()
     // - Slot 7: Empty
     //
     // > exit
+
+
+    
+    
 }

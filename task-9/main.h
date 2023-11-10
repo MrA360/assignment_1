@@ -9,22 +9,19 @@ struct Vector2
     float y;
 };
 
-float x[2];
-float y[2];
 
-
-void GetDistanceBetweenPoints() 
+float GetDistanceBetweenPoints(Vector2 a, Vector2 b)
 {
-    int xdif = (x[0] - x[1]);
-    int ydif = (y[0] - y[1]);
+    float xdif = (a.x - b.x);
+    float ydif = (a.y - b.y);
 
-    int xSquare = pow(xdif, 2);
-    int ySquare = pow(ydif, 2);
+    float xSquare = pow(xdif, 2);
+    float ySquare = pow(ydif, 2);
 
-    int total = xSquare + ySquare;
+    float total = xSquare + ySquare;
 
-    float d = sqrt(total);
-   
+    return sqrt(total);
+        
 }
 
 
