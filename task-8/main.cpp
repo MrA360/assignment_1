@@ -1,24 +1,72 @@
 #include <iostream>
+#include <fstream>
 #include <string>
+
+
 
 using namespace std;
 
 
 struct Inventory
 {
+    int Slots;
+
+}InventorySlots;
+
+struct Item_ID
+{
+
+    string Items[10]{"Empty"};
 
 
+}SlotID;
 
-    string Items;
+struct Menu
+{
 
+    string choice[5] { "view <number>" "show_all" "set <index> <item_id>" "items" "exit" };
 
+}MenuChoice[5]{ "view <number>" "show_all" "set <index> <item_id>" "items" "exit" };
 
-};
 
 void main()
 {
+    bool exit = false;
 
+
+    int sizeloop = 0;
+
+    cout << "from 1-16 how many inventory slots do you want: ";
     
+    cin >> InventorySlots.Slots;
+
+    while (exit != true)
+    {
+
+       cout << "Please select an option:\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool";
+
+       if (MenuChoice[0])
+       {
+
+       }
+
+       else if (MenuChoice[1])
+       {
+
+       }
+
+
+
+        while (InventorySlots.Slots > sizeloop)
+        {
+            sizeloop++;
+
+            cout << "Slot" << sizeloop << ": " << SlotID.Items[0] << endl;
+
+        }
+
+
+    }
 
     //In this challenge, you should build an inventory system using a dynamically
     //allocated array of structs.
