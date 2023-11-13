@@ -5,17 +5,6 @@ using namespace std;
 
 void main()
 {
-    //Build a structure in main.h capable of representing a 2D vector called Vector2. Then,
-    //write a function in main.h called GetDistanceBetweenPoints which:
-    //
-    //- Takes two Vector2 instances via parameter
-    //- Returns the Euclidean distance between the two points, as a float.
-    //
-    //Euclidean distance calculation is used throughout games programming, for several
-    //different purposes. 
-
-    //You should then highlight the function working correctly. The code below
-    //will prompt the user for an X and Y for two vectors.
 
     float xComponents[2] = { 0.0f, 0.0f };
     float yComponents[2] = { 0.0f, 0.0f };
@@ -40,9 +29,6 @@ void main()
     Vec2.y = yComponents[1];
     
 
-    cout << GetDistanceBetweenPoints(Vec1, Vec2);
-
-    //You should then build two Vector2s from the given x and y components, and show
-    //the calculated distance between each point.
+    cout << "The distance between " << "(" << Vec1.x << "," << Vec1.y << ") " << "and" << " (" << Vec2.x << "," << Vec2.y << ") " << "is: " << GetDistanceBetweenPoints(Vec1, Vec2);
     
 }

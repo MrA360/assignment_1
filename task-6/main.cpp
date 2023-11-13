@@ -3,47 +3,31 @@
 using namespace std;
 
 void main()
-{
-    //The code in this file has been produced to show you how to seed
-    //a random number generator, and use it. In main.h, we are using
-    //C++'s <random> library to generate random numbers.
-
-    //This can be done with srand() and rand(), but we have opted for
-    //using a modern C++ approach. It gives you much more control
-    //over the random numbers generated.
-
-    //-----------
-    //Expand the current solution to build a random number guessing game.
-    //The game should produce a random number between 0-100, and ask users
-    //for their guess. Based on their guess, the game should:
-
-    //- Say "freezing" if the number is plus or minus 50 from the guess.
-    //- Say "colder" if the number is plus or minus 35 from the guess.
-    //- Say "cold" if the number is plus or minus 25 from the guess.
-    //- Say "warm" if the number is plus or minus 15 from the guess.
-    //- Say "warmer" if the number is plus or minus 10 from the guess.
-    //- Say "hot" if the number is plus or minus 5 from the guess.
-    //- Say "boiling" if the number is plus or minus 2 from the guess.
-
-    //Once the user has submitted a guess, the program should show them
-    //one of these strings and prompt them for another guess.
-
-    //Alternatively, if the guess is correct, a success message should be shown,
-    //telling the player they have won.
-
-    //At the end of the program, it should also display the number of guesses
-    //the player needed to guess the value in.     
+{  
 
     int random_Num = random(1, 100);
     int player_gues;
+
+    
     bool finish_loop = false;
 
     while (finish_loop != true)
     {
         cout << random_Num << endl;
-        cout << "Please input a number: ";
+        cout << "Please inputa number: ";
         cin >> player_gues;
 
+        if (cin.fail()) //this is used to chek if the person enterd a character instead of an int
+        {
+            cout << "ERROR -- You did not enter an integer";
+
+            // get rid of failure state
+            cin.clear();
+
+            // discard 'bad' character(s) 
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        }
 
         if (player_gues == random_Num)
         {
@@ -52,56 +36,58 @@ void main()
             finish_loop = true;
 
         }
-        else if (player_gues >= (random_Num + 50) || player_gues <= (random_Num - 50))
+
+        else if (player_gues > random_Num + 50 || player_gues < random_Num - 50)
         {
             cout << "freezing\n \n";
 
         }
-        else if (player_gues >= (random_Num + 35) || player_gues <= (random_Num - 35))
+
+        else if (player_gues > random_Num + 35 || player_gues < random_Num - 35)
         {
             cout << "colder\n \n";
 
 
         }
-        else if (player_gues >= (random_Num + 25) || player_gues <= (random_Num - 25))
+
+        else if (player_gues > random_Num + 25 || player_gues < random_Num - 25)
         {
-                cout << "cold\n \n";
+            cout << "cold\n \n";
 
 
         }
-        else if (player_gues >= random_Num + 15 || player_gues <= (random_Num - 15))
+
+        else if (player_gues > random_Num + 15 || player_gues < random_Num - 15)
         {
             cout << "warm\n \n";
 
 
         }
-        else if (player_gues >= (random_Num + 10) || player_gues <= (random_Num - 10))
+
+        else if (player_gues > random_Num + 10 || player_gues < random_Num - 10)
         {
-                cout << "warmer\n \n";
+            cout << "warmer\n \n";
+
+        }
+
+        else if (player_gues > random_Num + 5 || player_gues < random_Num - 5)
+        {
+            cout << "hot\n \n";
 
 
         }
-        else if (player_gues >= (random_Num + 5) || player_gues <= (random_Num - 5))
+
+        else if (player_gues >= random_Num + 2 || player_gues < random_Num - 2)
         {
-                cout << "hot\n \n";
+            cout << "boiling\n \n";
 
 
         }
-        else if (player_gues >= (random_Num + 2) || player_gues <= (random_Num - 2))
-        {
-                cout << "boiling\n \n";
 
-
-        }
         else
         {
-              cout << "the number is between 1, 100\n \n";
+            cout << "the number is between 1, 100\n \n";
         }
-
-
-           
-
-            
-
     }
+
 }

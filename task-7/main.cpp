@@ -17,29 +17,54 @@ void main()
 {
     cout << "Please choose a class bellow: ";
     int count;
+    bool Complete = false;
     for (count = 0; count < 4; count++)
         cout << endl << count + 1 << ":" << profile.ss[count];
 
     cout << endl;
 
-    do
-    {
-        cin >> profile.sellection;
 
-        if (profile.sellection < 4 && profile.sellection > 0)
+        do
         {
-            profile.ch = profile.ss[profile.sellection - 1];
+            cin >> profile.sellection;
 
-            cout << "You have selected the " << profile.ch << " character class." << "\n\n";
-        }
+            if (cin.fail()) //this is used to chek if the person enterd a character instead of an int
+            {
 
-        else
-        {
-            cout << "Sorry the number has to be between 1 and 4 \n\n";
-        }
 
-    } while (profile.sellection <= 0 || profile.sellection >= 5);
+                // gets rid of the previous answer
+                cin.clear();
 
+                // discard anything other than an int
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout << "You can only select numbers no letters allowed \n \n";
+
+
+            }
+
+            else
+            {
+
+            }
+
+            if (profile.sellection <= 4 && profile.sellection > 0)
+            {
+                profile.ch = profile.ss[profile.sellection - 1];
+
+                cout << "You have selected the " << profile.ch << " character class." << "\n\n";
+
+                Complete = true;
+            }
+
+            else
+            {
+                cout << "Sorry the number has to be between 1 and 4 \n\n";
+
+                cout << "Please try again: ";
+            }
+
+        } while (Complete != true);
 
 
 
