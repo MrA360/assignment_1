@@ -1,2 +1,5 @@
 ﻿  main.cpp
-  Task8.vcxproj -> C:\Users\win10\Desktop\Git\assignment_1\task-8\Debug\Task8.exe
+.\main.cpp(48,24): error C2451: a conditional expression of type 'Menu' is not valid
+.\main.cpp(48,24): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+.\main.cpp(53,29): error C2451: a conditional expression of type 'Menu' is not valid
+.\main.cpp(53,29): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
