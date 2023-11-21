@@ -9,15 +9,17 @@ using namespace std;
 
 struct Inventory
 {
-    int Slots;
+    int SlotNumber;
+    string Items;
+
 
 }InventorySlots;
 
 struct Item_ID
 {
 
-    string Items[10]{"Empty"};
-
+    string Items[10]{ "","","","","","","","","","" };
+    string Slots[];
 
 }SlotID;
 
@@ -31,39 +33,49 @@ struct Menu
 
 void main()
 {
+    
+
     bool exit = false;
-
-
-    int sizeloop = 0;
+    int Minslot = 0;
 
     cout << "from 1-16 how many inventory slots do you want: ";
-    
-    cin >> InventorySlots.Slots;
 
-    while (exit != true)
+    cin >> InventorySlots.SlotNumber;
+
+    while (exit == false)
     {
 
-       cout << "Please select an option:\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool";
+       string choice;
 
-       if (MenuChoice[0])
+       cout << "\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool\n\n";
+       cout << "Please select an option: ";
+       cin >> choice;
+
+
+
+       if (choice == "view")
        {
+
+           cout << "slot" << SlotID.Slots[InventorySlots.SlotNumber];
 
        }
 
-       else if (MenuChoice[1])
+       else if (choice == "Show_all")
        {
+           while (InventorySlots.SlotNumber > Minslot)
+           {
+               Minslot++;
 
+               cout << "Slot" << Minslot << ": " << SlotID.Slots[0] << endl;
+
+           }
        }
 
 
-
-        while (InventorySlots.Slots > sizeloop)
-        {
-            sizeloop++;
-
-            cout << "Slot" << sizeloop << ": " << SlotID.Items[0] << endl;
-
-        }
+       else if (choice == "Exit") 
+       {
+           exit = true;
+       }
 
 
     }
