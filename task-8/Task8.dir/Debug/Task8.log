@@ -1,3 +1,2 @@
 ﻿  main.cpp
-.\main.cpp(23,1): error C2059: syntax error: '}'
-.\main.cpp(153,1): fatal  error C1004: unexpected end-of-file found
+.\main.cpp(13,20): error C2065: 'SlotID': undeclared identifier

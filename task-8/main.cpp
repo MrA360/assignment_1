@@ -10,16 +10,16 @@ using namespace std;
 struct Inventory
 {
     int SlotNumber;
-    string Items;
+    string Slots = SlotID.Items[1];
 
 
-}InventorySlots;
+}InventorySlots{};
 
 struct Item_ID
 {
 
-    string Items[10]{ "","","","","","","","","","" };
-    string Slots[];
+    string Items[10]{ "Empty","Apple","Sword","Shield","Ball","Iron","Hammer","Water","Lader","Armor" };
+    
 
 }SlotID;
 
@@ -34,18 +34,44 @@ struct Menu
 void main()
 {
     
-
+    bool Valid_Amount = false;
     bool exit = false;
     int Minslot = 0;
 
-    cout << "from 1-16 how many inventory slots do you want: ";
 
-    cin >> InventorySlots.SlotNumber;
+    while(Valid_Amount == false)
+    {
+
+        cout << "from 1-16 how many inventory slots do you want: ";
+
+        cin >> InventorySlots.SlotNumber;
+
+        if (InventorySlots.SlotNumber >= 17)
+        {
+            cout << "Sorry the number cannot go beyond 16\n";
+        }
+
+        else if (InventorySlots.SlotNumber <= 0)
+        {
+            cout << "Sorry the number cannot go below 1\n";
+        }
+        else
+        {
+            cout << "\n\nInventory set to " << InventorySlots.SlotNumber << endl;
+            Valid_Amount = true;
+
+
+        }
+    }
+
 
     while (exit == false)
     {
 
        string choice;
+       int number = 1;
+       string* InvSlots = new string(InventorySlots.Slots);
+       
 
        cout << "\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool\n\n";
        cout << "Please select an option: ";
@@ -56,19 +82,27 @@ void main()
        if (choice == "view")
        {
 
-           cout << "slot" << SlotID.Slots[InventorySlots.SlotNumber];
+           cout << "slot" << InventorySlots.Slots[InventorySlots.SlotNumber];
 
        }
 
        else if (choice == "Show_all")
        {
+
+
+
            while (InventorySlots.SlotNumber > Minslot)
            {
                Minslot++;
+               cout << "Slot" << " " << number << ":" << InvSlots << endl;
+               number++;
+               
+                
 
-               cout << "Slot" << Minslot << ": " << SlotID.Slots[0] << endl;
+
 
            }
+
        }
 
 
@@ -77,6 +111,7 @@ void main()
            exit = true;
        }
 
+       Minslot = 0;
 
     }
 
