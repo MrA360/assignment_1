@@ -1,119 +1,79 @@
 #include <iostream>
-#include <fstream>
+#include <vector>
 #include <string>
-
-
 
 using namespace std;
 
-
-struct Inventory
-{
-    int SlotNumber;
-    string Slots = SlotID.Items[1];
-
-
-}InventorySlots{};
-
-struct Item_ID
+struct Item 
 {
 
-    string Items[10]{ "Empty","Apple","Sword","Shield","Ball","Iron","Hammer","Water","Lader","Armor" };
-    
+    string name[5]{"apple", "sword", "shield", "armor", "wood"};
+};
 
-}SlotID;
+// Function to add an item to the inventory
+void addItem(vector<Item>& inventory) {
+    Item newItem;
+    string input;
+    int i = 0;
 
-struct Menu
+    cout << "Enter item name: ";
+    newItem.name[i] = input;
+    cin >> input;
+
+    inventory.push_back(newItem);
+    cout << "Item added to inventory." << endl;
+}
+
+// Function to display the inventory
+void displayInventory(const vector<Item>& inventory) 
 {
+    int SlotNum = 0;
 
-    string choice[5] { "view <number>" "show_all" "set <index> <item_id>" "items" "exit" };
-
-}MenuChoice[5]{ "view <number>" "show_all" "set <index> <item_id>" "items" "exit" };
-
-
-void main()
-{
-    
-    bool Valid_Amount = false;
-    bool exit = false;
-    int Minslot = 0;
-
-
-    while(Valid_Amount == false)
-    {
-
-        cout << "from 1-16 how many inventory slots do you want: ";
-
-        cin >> InventorySlots.SlotNumber;
-
-        if (InventorySlots.SlotNumber >= 17)
-        {
-            cout << "Sorry the number cannot go beyond 16\n";
-        }
-
-        else if (InventorySlots.SlotNumber <= 0)
-        {
-            cout << "Sorry the number cannot go below 1\n";
-        }
-        else
-        {
-            cout << "\n\nInventory set to " << InventorySlots.SlotNumber << endl;
-            Valid_Amount = true;
-
-
-        }
+    if (inventory.empty()) {
+        cout << "Inventory is empty." << endl;
     }
+    else {
+        cout << "Inventory:" << endl;
+        cout << "-----------------" << endl;
+        for (const auto& item : inventory) 
+        {
+           
 
-
-    while (exit == false)
-    {
-
-       string choice;
-       int number = 1;
-       string* InvSlots = new string(InventorySlots.Slots);
-       
-
-       cout << "\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool\n\n";
-       cout << "Please select an option: ";
-       cin >> choice;
-
-
-
-       if (choice == "view")
-       {
-
-           cout << "slot" << InventorySlots.Slots[InventorySlots.SlotNumber];
-
-       }
-
-       else if (choice == "Show_all")
-       {
-
-
-
-           while (InventorySlots.SlotNumber > Minslot)
-           {
-               Minslot++;
-               cout << "Slot" << " " << number << ":" << InvSlots << endl;
-               number++;
-               
-                
-
-
-
-           }
-
-       }
-
-
-       else if (choice == "Exit") 
-       {
-           exit = true;
-       }
-
-       Minslot = 0;
-
+            cout << "slot" << SlotNum << ":" << item.name << endl;
+        }
+        cout << "-----------------" << endl;
     }
+}
+
+int main() {
+    vector<Item> inventory;
+
+    char choice;
+    do {
+        cout << "Choose an option:" << endl;
+        cout << "1. Add item to inventory" << endl;
+        cout << "2. Display inventory" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case '1':
+            addItem(inventory);
+            break;
+        case '2':
+            displayInventory(inventory);
+            break;
+        case '3':
+            cout << "Exiting program." << endl;
+            break;
+        default:
+            cout << "Invalid choice. Please enter a valid option." << endl;
+        }
+    } while (choice != '3');
+
+    return 0;
+}
 
     //In this challenge, you should build an inventory system using a dynamically
     //allocated array of structs.
@@ -181,8 +141,3 @@ void main()
     // - Slot 7: Empty
     //
     // > exit
-
-
-    
-    
-}
