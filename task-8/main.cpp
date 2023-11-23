@@ -10,18 +10,18 @@ using namespace std;
 struct Inventory
 {
     int SlotNumber;
-    string Slots = SlotID.Items[1];
+    string SlotItem;
 
 
-}InventorySlots{};
+};
 
 struct Item_ID
 {
 
     string Items[10]{ "Empty","Apple","Sword","Shield","Ball","Iron","Hammer","Water","Lader","Armor" };
-    
 
-}SlotID;
+
+}ItemID;
 
 struct Menu
 {
@@ -33,85 +33,145 @@ struct Menu
 
 void main()
 {
-    
+
     bool Valid_Amount = false;
     bool exit = false;
     int Minslot = 0;
+    int Items = 10;
+    int InvSize = 16;
 
-
-    while(Valid_Amount == false)
+    while (Valid_Amount == false)
     {
 
         cout << "from 1-16 how many inventory slots do you want: ";
 
-        cin >> InventorySlots.SlotNumber;
+        cin >> InvSize;
 
-        if (InventorySlots.SlotNumber >= 17)
+        if (InvSize >= 17)
         {
             cout << "Sorry the number cannot go beyond 16\n";
         }
 
-        else if (InventorySlots.SlotNumber <= 0)
+        else if (InvSize <= 0)
         {
             cout << "Sorry the number cannot go below 1\n";
         }
         else
         {
-            cout << "\n\nInventory set to " << InventorySlots.SlotNumber << endl;
+            cout << "\n\nInventory set to " << InvSize << endl;
             Valid_Amount = true;
 
 
         }
     }
 
+    Inventory* InventorySlots = new Inventory[InvSize];
+
+    for (int i = 0; i < InvSize; i++)
+    {
+        InventorySlots[i].SlotNumber = i;
+        InventorySlots[i].SlotItem = ItemID.Items[0];
+    }
+
 
     while (exit == false)
     {
 
-       string choice;
-       int number = 1;
-       string* InvSlots = new string(InventorySlots.Slots);
-       
-
-       cout << "\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool\n\n";
-       cout << "Please select an option: ";
-       cin >> choice;
-
-
-
-       if (choice == "view")
-       {
-
-           cout << "slot" << InventorySlots.Slots[InventorySlots.SlotNumber];
-
-       }
-
-       else if (choice == "Show_all")
-       {
+        string choice;
+        //string* InvSlots = new string(InventorySlots.SlotItem);
+        string sViewID;
+        string sSetID;
+        string sSetIND;
+        int SetID = 0;
+        int setIND = 0;
+        int ViewID = 0;
 
 
 
-           while (InventorySlots.SlotNumber > Minslot)
-           {
-               Minslot++;
-               cout << "Slot" << " " << number << ":" << InvSlots << endl;
-               number++;
-               
+        cout << "\n view <number> - Prints out details of the inventory slot index specified by number. \n Show_all - Shows all slots in the inventory. \n set <index> <item_id> - Sets the inventory specified by #index to the item #item_id \n items - Shows all the items you can possibly set a slot to, along with their ids \n exit - Exits the tool\n\n";
+        cout << "Please select an option: ";
+        getline(cin, choice);
+
+
+
+        if (choice.find("View") != std::string::npos)
+        {
+
+            for (int i = 0; i < choice.length(); i++)
+            {
+                if (isdigit(choice[i]))
+                {
+                    sViewID += choice[i];
+                }
+            }
+
+            ViewID = stoi(sViewID);
+            cout << "Slot " << InventorySlots[ViewID].SlotNumber << ": " << InventorySlots[ViewID].SlotItem << endl;
+        }
+
+        else if (choice == "Show_all")
+        {
+            while (InvSize > Minslot)
+            {
+                cout << "Slot " << InventorySlots[Minslot].SlotNumber << ": " << InventorySlots[Minslot].SlotItem << endl;
+                Minslot++;
+            }
+        }
+
+
+
+        else if (choice.find("set") != std::string::npos || choice.find("Set") != std::string::npos)
+        {
+            for (int setCheckInd = 0; setCheckInd < 5; setCheckInd++)
+            {
+                if (isdigit(choice[setCheckInd]))
+                {
+                    sSetIND += choice[setCheckInd];
+                    //choice.remove(choice[setCheckInd], "");
+                    choice.erase(choice.begin() + 4);
+                    
+                }
                 
+            }
 
 
 
-           }
+            for (int setCheckID = 0; setCheckID < choice.length(); setCheckID++)
+            {
+                if (isdigit(choice[setCheckID]))
+                {
+                    sSetID += choice[setCheckID];
+                }
+            }
 
-       }
+            setIND = stoi(sSetIND);
+            SetID = stoi(sSetID);
+            InventorySlots[setIND].SlotItem = ItemID.Items[SetID];
+
+            cout << "Slot " << InventorySlots[setIND].SlotNumber << ": " << InventorySlots[setIND].SlotItem << endl;
+        }
 
 
-       else if (choice == "Exit") 
-       {
-           exit = true;
-       }
 
-       Minslot = 0;
+        else if (choice == "Item" || choice == "item")
+        {
+            Minslot == 0;
+
+            while (Items > Minslot)
+            {
+
+                cout << "\nItem" << Minslot << ": " << ItemID.Items[Minslot] << endl;
+                Minslot++;
+            }
+        }
+
+
+        else if (choice == "Exit")
+        {
+            exit = true;
+        }
+
+        Minslot = 0;
 
     }
 
@@ -122,7 +182,7 @@ void main()
     //the user can set inventory slots to one of these values. Each index into this
     //array could be classes as an "item id"
 
-    
+
     //The player should be able to:
     //- Specify the size of the inventory (1 - 16 slots)
     //- Type commands to interact with the inventory, like so:
@@ -145,7 +205,7 @@ void main()
     // - 1: Shield
     // - 2: Potion
     // - 3: Gloves
-    
+
     //An example session with these items might look like:
 
     // Please enter an inventory size: 8
@@ -183,6 +243,6 @@ void main()
     // > exit
 
 
-    
-    
+
 }
+
