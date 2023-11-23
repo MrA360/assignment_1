@@ -2,16 +2,19 @@
 
 struct Assignment1
 {
-    int C1;
-    int C2;
+    float C1;
+    float C2;
+    float Tottal1;
+    float WeightPrec1;
 };
 
 struct Assignment2
 {
-    int C1;
-    int C2;
-    int C3;
-
+    float C1;
+    float C2;
+    float C3;
+    float Tottal2;
+    float WeightPrec2;
 };
 
 void main()
@@ -35,31 +38,31 @@ void main()
     {
         std::cin >> Assign1.C1;
 
-        if (Assign1.C1 == 100)
+        if (Assign1.C1 >= 70 && Assign1.C1 <= 100)
         {
             std::cout << ">> Boundary: 1:1 (First)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C1 >= 85 && Assign1.C1 <= 98)
+        else if (Assign1.C1 >= 60 && Assign1.C1 <= 69)
         {
             std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C1 >= 71 && Assign1.C1 <= 84)
+        else if (Assign1.C1 >= 50 && Assign1.C1 <= 59)
         {
             std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C1 >= 57 && Assign1.C1 <= 70)
+        else if (Assign1.C1 >= 40 && Assign1.C1 <= 49)
         {
             std::cout << ">> Boundary: Pass(third)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C1 <= 55 && Assign1.C1 >= 1)
+        else if (Assign1.C1 <= 39 && Assign1.C1 >= 1)
         {
             std::cout << ">> Boundary: Fail\n\n";
             ValidInput = true;
@@ -83,31 +86,31 @@ void main()
     {
         std::cin >> Assign1.C2;
 
-        if (Assign1.C2 == 100)
+        if (Assign1.C2 >= 70 && Assign1.C2 <= 100)
         {
             std::cout << ">> Boundary: 1:1 (First)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C2 >= 85 && Assign1.C2 <= 98)
+        else if (Assign1.C2 >= 60 && Assign1.C2 <= 69)
         {
             std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C2 >= 71 && Assign1.C2 <= 84)
+        else if (Assign1.C2 >= 50 && Assign1.C2 <= 59)
         {
             std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C2 >= 57 && Assign1.C2 <= 70)
+        else if (Assign1.C2 >= 40 && Assign1.C2 <= 49)
         {
             std::cout << ">> Boundary: Pass(third)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign1.C2 <= 55 && Assign1.C2 >= 1)
+        else if (Assign1.C2 <= 39 && Assign1.C2 >= 1)
         {
             std::cout << ">> Boundary: Fail\n\n";
             ValidInput = true;
@@ -137,31 +140,31 @@ void main()
     {
         std::cin >> Assign2.C1;
 
-        if (Assign2.C1 == 100)
+        if (Assign2.C1 >= 70 && Assign2.C1 <= 100)
         {
             std::cout << ">> Boundary: 1:1 (First)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C1 >= 85 && Assign2.C1 <= 98)
+        else if (Assign2.C1 >= 60 && Assign2.C1 <= 69)
         {
             std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C1 >= 71 && Assign2.C1 <= 84)
+        else if (Assign2.C1 >= 50 && Assign2.C1 <= 59)
         {
             std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C1 >= 57 && Assign2.C1 <= 70)
+        else if (Assign2.C1 >= 40 && Assign2.C1 <= 49)
         {
             std::cout << ">> Boundary: Pass(third)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C1 <= 55 && Assign2.C1 >= 1)
+        else if (Assign2.C1 <= 39 && Assign2.C1 >= 1)
         {
             std::cout << ">> Boundary: Fail\n\n";
             ValidInput = true;
@@ -184,31 +187,31 @@ void main()
     {
         std::cin >> Assign2.C2;
 
-        if (Assign2.C2 == 100)
+        if (Assign2.C2 >= 70 && Assign2.C2 <= 100)
         {
             std::cout << ">> Boundary: 1:1 (First)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C2 >= 85 && Assign2.C2 <= 98)
+        else if (Assign2.C2 >= 60 && Assign2.C2 <= 69)
         {
             std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C2 >= 71 && Assign2.C2 <= 84)
+        else if (Assign2.C2 >= 50 && Assign2.C2 <= 59)
         {
             std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C2 >= 57 && Assign2.C2 <= 70)
+        else if (Assign2.C2 >= 40 && Assign2.C2 <= 49)
         {
             std::cout << ">> Boundary: Pass(third)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C2 <= 55 && Assign2.C2 >= 1)
+        else if (Assign2.C2 <= 39 && Assign2.C2 >= 1)
         {
             std::cout << ">> Boundary: Fail\n\n";
             ValidInput = true;
@@ -231,31 +234,31 @@ void main()
     {
         std::cin >> Assign2.C3;
 
-        if (Assign2.C3 == 100)
+        if (Assign2.C3 >= 70 && Assign2.C3 <= 100)
         {
             std::cout << ">> Boundary: 1:1 (First)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C3 >= 85 && Assign2.C3 <= 98)
+        else if (Assign2.C3 >= 60 && Assign2.C3 <= 69)
         {
             std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C3 >= 71 && Assign2.C3 <= 84)
+        else if (Assign2.C3 >= 50 && Assign2.C3 <= 59)
         {
             std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C3 >= 57 && Assign2.C3 <= 70)
+        else if (Assign2.C3 >= 40 && Assign2.C3 <= 49)
         {
             std::cout << ">> Boundary: Pass(third)\n\n";
             ValidInput = true;
         }
 
-        else if (Assign2.C3 <= 55 && Assign2.C3 >= 1)
+        else if (Assign2.C3 <= 39 && Assign2.C3 >= 1)
         {
             std::cout << ">> Boundary: Fail\n\n";
             ValidInput = true;
@@ -268,34 +271,78 @@ void main()
 
         }
 
-        std::cout << "____________ \n\n";
 
-        if (Assign1.C1 + Assign1.C2 == 200)
+    }
+
+    ValidInput = false;
+
+
+    std::cout << "____________ \n\n";
+    float tottalUndiv1 = Assign1.C1 + Assign1.C2;
+    float tottalUndiv2 = Assign2.C1 + Assign2.C2 + Assign2.C3;
+    float TottalAfterW = Assign1.WeightPrec1 + Assign2.WeightPrec2;
+
+    Assign1.Tottal1 = tottalUndiv1 / 2;
+    Assign2.Tottal2 = tottalUndiv2 / 3;
+
+    Assign1.WeightPrec1 = Assign1.Tottal1 / 2;
+    Assign2.WeightPrec2 = Assign2.Tottal2 / 2;
+
+
+
+    std::cout << "Total (relative) percent for assesment 1: " << Assign1.Tottal1 << "\n";
+    std::cout << "weighted percent for assessment 1(0%-50%): " << Assign1.WeightPrec1 << "\n";
+
+    std::cout << "Total (relative) percent for assesment 2: " << Assign2.Tottal2 << "\n";
+    std::cout << "weighted percent for assessment 1(0%-50%): " << Assign2.WeightPrec2 << "\n";
+
+    while (ValidInput == false)
+    {
+
+        if (TottalAfterW >= 70 && TottalAfterW <= 100)
         {
-            std::cout << "Total (relative) percent for assesment 1: 100%\n";
-            std::cout << "weighted percent for assessment 1(0%-50%): 50%\n";
+            std::cout << ">> Boundary: 1:1 (First)\n\n";
+            ValidInput = true;
         }
 
-        else if (Assign1.C1 + Assign1.C2)
+        else if (TottalAfterW >= 60 && TottalAfterW <= 69)
         {
-
+            std::cout << ">> Boundary: 2:1 (Upper Second-Class)\n\n";
+            ValidInput = true;
         }
 
-        else if (true)
+        else if (TottalAfterW >= 50 && TottalAfterW <= 59)
         {
-
+            std::cout << ">> Boundary:  2:2 (Lower Second-Class)\n\n";
+            ValidInput = true;
         }
 
-        else if (true)
+        else if (TottalAfterW >= 40 && TottalAfterW <= 49)
         {
+            std::cout << ">> Boundary: Pass(third)\n\n";
+            ValidInput = true;
+        }
 
+        else if (TottalAfterW <= 39 && TottalAfterW >= 1)
+        {
+            std::cout << ">> Boundary: Fail\n\n";
+            ValidInput = true;
         }
 
         else
         {
+            std::cout << "Invalid Input\n";
+            std::cout << "Please input a number between 1-100 \n > ";
 
         }
-    }
+
+
+
+
+}
+
+
+
 
 
 
